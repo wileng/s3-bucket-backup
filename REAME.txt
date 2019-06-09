@@ -1,3 +1,14 @@
+This program is designed to make a backup to the AWS S3 service of the current directories and sub-directories. A few notes on the program:
+
+•	I wanted this to be the kind of backup system where you can save your files to the cloud, and delete them locally, this program does not support the deletion of cloud files.
+•	Files that have the same name, but are located in different folders, are considered by this program to be distinct files, just as they would in a normal OS file system.
+•	Empty folders cannot be uploaded to the cloud
+
+When the program runs, it will first check to see if the ‘credentials’ file exists. Then, it will check its connection to the AWS S3 service. If it is unable to connect after 4 attempts, the program will terminate. Once the connection has been made, the program will ask the user to either choose an existing bucket to upload to, or to create a new bucket.
+
+The program will then compare the files of local directory and the files in the cloud bucket based on the name and time of last modification. If any local files have modification times sooner than their counterparts in the cloud, or if the files does not yet exist in the cloud, the user will be asked if they would like to update these files. The user can update all of the files in bulk, or go through them and choose which they would like to update. The user will also be shown the files that are already up-to-date.
+
+
 Before building or running, please make sure you have the following properly downloaded and installed:
 ---> Python 2.7
 ---> Boto3 for Python 2.7
