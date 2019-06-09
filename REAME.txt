@@ -1,0 +1,25 @@
+Before building or running, please make sure you have the following properly downloaded and installed:
+---> Python 2.7
+---> Boto3 for Python 2.7
+---> AWS CLI (OPTIONAL)
+
+Also be sure that your credentials are properly configured by doing the following:
+
+------->If you have the '.aws' folder in your user (~/) directory with the 'config' and 'credentials' files,
+ 	open the 'credentials' file and replace the fields to the right of 'aws_access_key_id = ' and
+ 	'aws_secret_access_key = ' with your Access Key ID and Secret Key respectively.
+ 	
+------->If you don't have the '.aws' folder in your user (~/) directory, create '.aws' in that directory.
+	Then, create a file called 'credentials'. Enter the following within it:
+	
+[default]
+aws_access_key_id = KEY_ID_HERE
+aws_secret_access_key = SECRET_ACCESS_KEY_HERE
+	
+	
+------->Alternatively, if you have AWS CLI installed, you can enter your credentials with the 'aws configure'
+ 	command.
+ 	
+ 	
+ 	
+Run with Python 2.7 with the command "python backup.py"
